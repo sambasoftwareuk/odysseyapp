@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col bg-sky-100">
       <div className="relative h-[40vh] w-full overflow-hidden">
@@ -20,19 +24,28 @@ export default function Home() {
 
           <div className="space-y-4">
             <p className="text-lg">Bir hesabınız var mı?</p>
-            <button className="rounded-4xl bg-yellow-400 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95 px-4 py-2">
+            <button
+              onClick={() => router.push("/goals")}
+              className="rounded-4xl bg-yellow-400 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95 px-4 py-2 cursor-pointer"
+            >
               GİRİŞ
             </button>
           </div>
           <div className="space-y-4">
             <p className="text-lg">Yok mu?</p>
-            <button className="rounded-4xl bg-yellow-400 px-4 py-2 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95">
+            <button
+              onClick={() => router.push("/goals")}
+              className="rounded-4xl bg-yellow-400 px-4 py-2 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95 cursor-pointer"
+            >
               KAYIT OL
             </button>
           </div>
           <div className="space-y-4 pt-4">
             <p className="text-base opacity-90">ya da kayıt olmadan:</p>
-            <button className="rounded-4xl bg-yellow-400 px-4 py-2 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95">
+            <button
+              onClick={() => router.push("/goals")}
+              className="rounded-4xl bg-yellow-400 px-4 py-2 text-lg font-semibold text-black transition-all hover:bg-yellow-500 active:scale-95 cursor-pointer"
+            >
               DEVAM ET
             </button>
           </div>
