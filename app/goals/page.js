@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Breadcrumb from "../components/breadcumb";
 
 const goals = [
   "Stres ve kaygımı daha iyi yönetmek istiyorum.",
@@ -40,6 +41,9 @@ export default function GoalsPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#1a4d3a] px-4 py-8">
+      <div className="mx-auto w-full max-w-2xl">
+        <Breadcrumb currentPage="Hedefler" />
+      </div>
       <div className="mx-auto w-full max-w-2xl space-y-6">
         <h1 className="text-center text-2xl font-semibold text-white">
           Hedeflerinizi Seçin
