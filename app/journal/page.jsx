@@ -68,6 +68,7 @@ export default function JournalPage() {
       <h1 className="text-3xl font-bold text-center mb-6 text-white">Günlük (Journal)</h1>
 
       {/* CALENDAR BOX */}
+      <Link href="/journal-reading">
       <div className="bg-yellow-300 max-w-3xl mx-auto p-6 rounded-2xl shadow">
         {/* Month Selector */}
         <div className="flex justify-between mb-4">
@@ -101,6 +102,7 @@ export default function JournalPage() {
           {calendarDays}
         </div>
       </div>
+      </Link>
 
       {/* JOURNAL MODES */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
