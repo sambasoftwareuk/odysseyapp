@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Breadcrumb from "../components/breadcrumb";
+import Breadcrumb from "../components/Breadcrumb";
+
 
 export default function JournalPage() {
   const [currentDate, setCurrentDate] = useState(new Date());

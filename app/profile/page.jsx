@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Breadcrumb from "../components/Breadcrumb";
 import ProgressRing from "../components/ProgressRing";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("goals");
