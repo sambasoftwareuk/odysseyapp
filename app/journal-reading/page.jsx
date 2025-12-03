@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Breadcrumb from "../components/breadcumb";
+import Breadcrumb from "../components/breadcrumb";
 
 export default function JournalReadingPage() {
   // Taklit amaçlı günler

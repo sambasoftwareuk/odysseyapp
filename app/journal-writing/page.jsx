@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Breadcrumb from "../components/breadcumb";
+import Breadcrumb from "../components/breadcrumb";
 
 export default function JournalWritingPage() {
   const router = useRouter();
