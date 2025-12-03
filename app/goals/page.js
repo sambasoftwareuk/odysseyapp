@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Breadcrumb from "../components/breadcumb";
+import Breadcrumb from "../components/Breadcrumb";
 
 const goals = [
   "Stres ve kaygımı daha iyi yönetmek istiyorum.",

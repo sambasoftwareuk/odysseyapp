@@ -3,10 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Breadcrumb from "../components/breadcumb";
+import Breadcrumb from "../components/Breadcrumb";
+import ProgressRing from "../components/ProgressRing";
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState("daily");
+  const [activeTab, setActiveTab] = useState("goals");
   const router = useRouter();
 
   return (
@@ -65,16 +66,6 @@ export default function ProfilePage() {
       {/* Tabs */}
       <div className="mt-16 flex justify-around text-sm font-semibold">
         <button
-          onClick={() => setActiveTab("daily")}
-          className={`flex flex-col items-center gap-1 ${
-            activeTab === "daily" ? "text-yellow-300" : "text-white"
-          }`}
-        >
-          <span className="text-xl">🕘</span>
-          Günlük Görevler
-        </button>
-
-        <button
           onClick={() => setActiveTab("goals")}
           className={`flex flex-col items-center gap-1 ${
             activeTab === "goals" ? "text-yellow-300" : "text-white"
@@ -82,6 +73,15 @@ export default function ProfilePage() {
         >
           <span className="text-xl">❤️</span>
           Hedefler
+        </button>
+        <button
+          onClick={() => setActiveTab("daily")}
+          className={`flex flex-col items-center gap-1 ${
+            activeTab === "daily" ? "text-yellow-300" : "text-white"
+          }`}
+        >
+          <span className="text-xl">🕘</span>
+          Günlük Görevler
         </button>
       </div>
       <div
@@ -103,12 +103,19 @@ export default function ProfilePage() {
 
           {activeTab === "goals" && (
             <>
-              <div className="text-3xl md:text-4xl font-bold bg-white/30 py-4 rounded-xl shadow">
-                10 Sayfa Kitap
-              </div>
-
-              <div className="text-3xl md:text-4xl font-bold bg-white/30 py-4 rounded-xl shadow">
-                5 Vakit Namaz
+              <div className="grid grid-cols-2 gap-4 place-items-center">
+                <div>
+                  <ProgressRing progress={1} label="Stres" />
+                </div>
+                <div>
+                  <ProgressRing progress={2} label="Duygu Yönetimi" />
+                </div>
+                <div className="col-span-2 justify-self-center">
+                  <ProgressRing
+                    progress={4}
+                    label="Kişisel Gelişim"
+                  />
+                </div>
               </div>
             </>
           )}
