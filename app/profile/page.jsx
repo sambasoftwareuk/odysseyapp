@@ -47,7 +47,7 @@ export default function ProfilePage() {
       </div>
 
       {/* Emoji Section */}
-      <div className="text-center my-14">
+      <div className="text-center my-4">
         <p className="mb-2 text-sm md:text-base">
           Bugün nasıl hissediyorsunuz?
         </p>
@@ -63,8 +63,18 @@ export default function ProfilePage() {
         </div>
       </div>
 
+      <div className="flex justify-center text-xl">
+        <button
+          onClick={() => router.push("/journal")}
+          className="flex items-center gap-1 transition-all text-green-800 hover:text-white active:scale-95 cursor-pointer bg-amber-100 px-4 py-2 rounded-lg"
+          aria-label="Günlüğe Git"
+        >
+          📖 Günlük Yaz
+        </button>
+      </div>
+
       {/* Tabs */}
-      <div className="mt-16 flex justify-around text-sm font-semibold">
+      <div className="mt-4 flex justify-around text-sm font-semibold">
         <button
           onClick={() => setActiveTab("goals")}
           className={`flex flex-col items-center gap-1 ${
@@ -111,10 +121,7 @@ export default function ProfilePage() {
                   <ProgressRing progress={2} label="Duygu Yönetimi" />
                 </div>
                 <div className="col-span-2 justify-self-center">
-                  <ProgressRing
-                    progress={4}
-                    label="Kişisel Gelişim"
-                  />
+                  <ProgressRing progress={4} label="Kişisel Gelişim" />
                 </div>
               </div>
             </>

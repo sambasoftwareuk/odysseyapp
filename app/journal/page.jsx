@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
+import Link from "next/link";
 
 
 export default function JournalPage() {
@@ -59,12 +60,12 @@ export default function JournalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-100 p-6">
-      <div className="mx-auto w-full max-w-2xl text- ">
+    <div className="min-h-screen bg-green-600 p-6">
+      <div className="mx-auto w-full max-w-2xl">
         <Breadcrumb currentPage="journal" />
       </div>
       {/* TITLE */}
-      <h1 className="text-3xl font-bold text-center mb-6">Günlük (Journal)</h1>
+      <h1 className="text-3xl font-bold text-center mb-6 text-white">Günlük (Journal)</h1>
 
       {/* CALENDAR BOX */}
       <div className="bg-yellow-300 max-w-3xl mx-auto p-6 rounded-2xl shadow">
@@ -104,6 +105,8 @@ export default function JournalPage() {
       {/* JOURNAL MODES */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {/* HIZLI MOD */}
+
+        <Link href="/journal-writing"> 
         <div className="bg-white p-6 shadow rounded-xl">
           <h3 className="text-xl font-bold mb-3 text-green-700">
             Hızlı Mod (30 saniye)
@@ -115,8 +118,11 @@ export default function JournalPage() {
             <li>• Kendim için yaptığım 1 mini adım</li>
           </ul>
         </div>
+        </Link>
 
         {/* YAVAŞ MOD */}
+
+        <Link href="/journal-writing">
         <div className="bg-white p-6 shadow rounded-xl">
           <h3 className="text-xl font-bold mb-3 text-red-700">
             Yavaş Mod (1–2 dakika)
@@ -130,6 +136,7 @@ export default function JournalPage() {
             <li>• Küçük çözüm adımı</li>
           </ul>
         </div>
+        </Link>
       </div>
     </div>
   );

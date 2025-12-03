@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Breadcrumb from "../components/Breadcrumb";
+import Image from "next/image";
 
 
 export default function JournalWritingPage() {
@@ -30,11 +31,11 @@ export default function JournalWritingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-100 px-6 py-8">
+    <div className="min-h-screen bg-green-600 px-6 py-8">
       <div className="mx-auto w-full max-w-2xl">
         <Breadcrumb currentPage="Journal-writing" />
       </div>
-      <h1 className="text-3xl font-bold text-center mb-6">
+      <h1 className="text-3xl font-bold text-center mb-6 text-white">
         Günlük Yaz (Journal Writing)
       </h1>
 
@@ -51,10 +52,12 @@ export default function JournalWritingPage() {
         {image && (
           <div className="mt-4">
             <p className="text-sm font-semibold mb-1">Eklenen Fotoğraf:</p>
-            <img
+            <Image
               src={image}
               alt="Uploaded"
               className="rounded-lg shadow-md max-h-64 object-cover"
+              width={256}
+              height={256}
             />
           </div>
         )}
