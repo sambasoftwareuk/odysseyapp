@@ -35,7 +35,7 @@ export default function GoalsPage() {
 
   const handleContinue = () => {
     if (selectedGoals.length === 3) {
-      router.push("/profile");
+      router.push("/daily-time");
     }
   };
 
